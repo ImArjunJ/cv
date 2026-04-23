@@ -60,15 +60,14 @@
 \customcventry{Jul 2023 -- Sep 2023}{Software Engineer Intern}{BP}{London, UK}{}{
 \begin{itemize}[leftmargin=0.6cm,label=\textbullet]
     \item Contract extended 2 months. Built Safety \& Assurance panel adopted by 100+ assurers across the organisation
-    \item Created Power BI dashboards with DAX statistical regression, now viewed by 50+ executives
 \end{itemize}}
 
 \section{Projects \& Publications}
-\cventry{}{RX-INT: Kernel-Assisted Security Tool}{}{}{}{Windows kernel driver for real-time in-memory threat detection (VAD manipulation, module stomping). Outperformed PE-sieve across all tested stealth injection techniques (10+ scenarios). Preprint on arXiv. \href{https://arxiv.org/abs/2508.03879}{\color{blue}Paper}}
+\cventry{}{RX-INT: Kernel-Assisted Security Tool}{}{}{}{Windows kernel driver for real-time in-memory threat detection (VAD manipulation, module stomping). Outperformed PE-sieve across all tested stealth injection techniques (12 scenarios). Preprint on arXiv. \href{https://arxiv.org/abs/2508.03879}{\color{blue}Paper}}
 \vspace{1mm}
 \cventry{}{jcan}{}{}{}{Open-source CAN bus diagnostic tool (83+ stars). First-ever Linux driver for Vector CAN hardware. Features signal plotting, real-time bus monitor, DBC decoding, and multi-adapter support. C++23, Dear ImGui, libusb. \href{https://github.com/ImArjunJ/jcan}{\color{blue}Project}}
 \vspace{1mm}
-\cventry{}{Chimera: .NET Runtime Injection}{}{}{}{Stealth process injection via CLR JIT internals. Reverse-engineered the .NET runtime to allocate on-demand RWX memory regions, bypassing EDR/AV. 5,000+ views. \href{https://arjunjuneja.com/blog/2025/08/08/chimera}{\color{blue}Writeup}}
+\cventry{}{Chimera: .NET Runtime Injection}{}{}{}{Stealth process injection via CLR JIT internals. Reverse-engineered the .NET runtime to force RWX allocations through internal JIT code heap paths, indistinguishable from legitimate JIT regions. \href{https://arjunjuneja.com/blog/2025/08/08/chimera}{\color{blue}Writeup}}
 \vspace{1mm}
 \cventry{}{LogiLinux}{}{}{}{1st place, LauzHack '25. Reverse-engineered Logitech HID++ protocols to build full Linux driver for MX Creative Console. C++ backend, Tauri UI, plugin SDK. \href{https://github.com/logilinux/}{\color{blue}Project}}
 \vspace{1mm}
@@ -92,7 +91,7 @@
 \cvitem{Core}{C++, Rust, C\#/.NET, Python, LLVM IR, x86/x64 Assembly}
 \cvitem{Systems}{Windows Kernel, Win32 API, Linux, FPGA, System Verilog, HID, CAN bus}
 \cvitem{Tools}{IDA Pro, Ghidra, x64dbg, Wireshark, GDB, CMake, Docker, Git, CI/CD}
-\cvitem{Also}{TypeScript, React, Node.js, SQL, GCP, AWS, OpenGL, Dear ImGui}
+\cvitem{Graphics}{OpenGL, Dear ImGui, Compute Shaders}
 
 
 \end{document}
