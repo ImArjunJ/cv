@@ -2,96 +2,154 @@
 \moderncvstyle{banking}
 \moderncvcolor{black}
 \nopagenumbers{}
+
 \usepackage[utf8]{inputenc}
-\usepackage{ragged2e}
-\usepackage[scale=0.9, top=0.8cm, bottom=0.5cm]{geometry}
-\usepackage{import}
+\usepackage[scale=0.9, top=0.7cm, bottom=0.45cm]{geometry}
 \usepackage{enumitem}
-\usepackage{amssymb}
+\usepackage{ragged2e}
+\usepackage{xcolor}
+\usepackage[unicode]{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=blue
+}
 
 \name{Arjun}{Juneja}
 
-\social[linkedin]{in/arjunjuneja}
-\social[github]{ImArjunJ}
-\homepage{arjunjuneja.com}
-\phone[mobile]{+44 7447 361 102}
-\email{arjunjuneja4u@gmail.com}
-\address{London, United Kingdom}
-
-\newcommand*{\customcventry}[7][.08em]{
+\newcommand*{\customcventry}[7][.05em]{
 \begin{tabular}{@{}l}
-{\bfseries #4} \
+{\bfseries #4} \\
 {\itshape #3}
 \end{tabular}
 \hfill
 \begin{tabular}{l@{}}
-{\bfseries #5} \
+{\bfseries #5} \\
 {\itshape #2}
 \end{tabular}
 \ifx&#7&%
-\else{\
+\else{\\
 \begin{minipage}{\maincolumnwidth}%
 \small#7%
 \end{minipage}}\fi%
 \par\addvspace{#1}}
 
-\begin{document}
+\setlist[itemize]{leftmargin=0.55cm, itemsep=0.15mm, topsep=0.2mm}
 
-\makecvtitle
+\begin{document}
+\vspace{1mm}
+
+\begin{center}
+    {\huge \textbf{Arjun Juneja}} \\[1mm]
+    London, UK \textbar{}
++44 7447 361 102 \textbar{}
+\href{mailto:arjunjuneja4u@gmail.com}{arjunjuneja4u@gmail.com} \textbar{}
+\href{https://arjunjuneja.com}{arjunjuneja.com} \textbar{}
+\href{https://linkedin.com/in/arjunjuneja}{LinkedIn} \textbar{}
+\href{https://github.com/ImArjunJ}{GitHub}
+\end{center}
 
 \vspace{-6mm}
 
 \section{Summary}
-\justifying{Low-level systems engineer with a preprint research paper (arXiv) and 7 first-place hackathon wins across Europe and the US. I specialize in kernel development, reverse engineering, and high-performance native applications in C++ and Rust.}
-
+\justifying{
+Systems and security engineer building low-level tooling across Windows kernel, Linux drivers, reverse engineering, and C++/Rust infrastructure. Published kernel-assisted threat detection research on arXiv, built open-source CAN tooling with 80+ GitHub stars, and won multiple international hackathon/CTF competitions including Junction '25 and LauzHack '25.
+}
 
 \section{Experience}
-\customcventry{Jul 2026 -- Sep 2026}{Security Engineer}{XTX Markets}{London, UK}{}{
-\begin{itemize}[leftmargin=0.6cm,label=\textbullet]
-    \item Incoming Summer 2026. Security tooling and infrastructure for a quantitative trading firm.
+
+\customcventry{Jul 2026 -- Sep 2026}{Security Engineer Intern}{XTX Markets}{London, UK}{}{
+\begin{itemize}
+    \item Selected for Summer 2026 Security Engineering internship focused on security tooling and infrastructure.
 \end{itemize}}
-\vspace{1mm}
+
+\vspace{0.4mm}
+
 \customcventry{Sep 2025 -- Jan 2026}{Software Engineer}{Hacktron AI}{London, UK}{}{
-\begin{itemize}[leftmargin=0.6cm,label=\textbullet]
-    \item Built AI-driven callstack generation engine using treesitter AST parsing across 6 languages for automated pentesting reports
-    \item Designed and shipped CLI authentication flow handling OAuth2 token exchange and session persistence
+\begin{itemize}
+    \item Built tree-sitter-based static call graph extraction engine to identify security-relevant call paths for automated pentesting reports.
+    \item Shipped CLI authentication flow supporting OAuth2 token exchange, persistent sessions, and developer-facing access control.
 \end{itemize}}
-\vspace{1mm}
+
+\vspace{0.4mm}
+
 \customcventry{Jul 2023 -- Sep 2023}{Software Engineer Intern}{BP}{London, UK}{}{
-\begin{itemize}[leftmargin=0.6cm,label=\textbullet]
-    \item Contract extended 2 months. Built Safety \& Assurance panel adopted by 100+ assurers across the organisation
+\begin{itemize}
+    \item Built internal Safety \& Assurance tooling adopted by 100+ assurers across the organisation.
+    \item Internship extended by 2 months after delivering production tooling and stakeholder-facing features.
 \end{itemize}}
 
-\section{Projects \& Publications}
-\cventry{}{RX-INT: Kernel-Assisted Security Tool}{}{}{}{Windows kernel driver for real-time in-memory threat detection (VAD manipulation, module stomping). Outperformed PE-sieve across all tested stealth injection techniques (12 scenarios). Preprint on arXiv. \href{https://arxiv.org/abs/2508.03879}{\color{blue}Paper}}
-\vspace{1mm}
-\cventry{}{jcan}{}{}{}{Open-source CAN bus diagnostic tool (83+ stars). First-ever Linux driver for Vector CAN hardware. Features signal plotting, real-time bus monitor, DBC decoding, and multi-adapter support. C++23, Dear ImGui, libusb. \href{https://github.com/ImArjunJ/jcan}{\color{blue}Project}}
-\vspace{1mm}
-\cventry{}{Chimera: .NET Runtime Injection}{}{}{}{Stealth process injection via CLR JIT internals. Reverse-engineered the .NET runtime to force RWX allocations through internal JIT code heap paths, indistinguishable from legitimate JIT regions. \href{https://arjunjuneja.com/blog/2025/08/08/chimera}{\color{blue}Writeup}}
-\vspace{1mm}
-\cventry{}{LogiLinux}{}{}{}{1st place, LauzHack '25. Reverse-engineered Logitech HID++ protocols to build full Linux driver for MX Creative Console. C++ backend, Tauri UI, plugin SDK. \href{https://github.com/logilinux/}{\color{blue}Project}}
-\vspace{1mm}
-\cventry{}{Source2 Engine RE}{}{}{}{Reverse-engineered Valve's Source2 engine (CS2). Documented runtime interface system, virtual method tables, and memory layout. Built tooling for interface enumeration and SDK generation. \href{https://github.com/ImArjunJ/Source2}{\color{blue}Project} \href{https://arjunjuneja.com/blog/2024/03/08/source2-re}{\color{blue}Writeup}}
-\vspace{1mm}
-\cventry{}{osu! RE}{}{}{}{Reverse-engineered osu!'s .NET runtime structure, and memory layout. Built pattern scanner and real-time memory reader for audio timing and game state extraction. \href{https://arjunjuneja.com/blog/2024/01/24/osu-re}{\color{blue}Writeup}}
+\section{Selected Projects \& Publications}
+\cventry{}{jcan}{}{}{}{
+Open-source CAN bus diagnostic tool with 80+ GitHub stars. Implemented Linux support for Vector CAN hardware with real-time bus monitoring, DBC decoding, signal plotting, and multi-adapter support. Built in C++23 with Dear ImGui and libusb.
+\href{https://github.com/ImArjunJ/jcan}{Project}
+}
 
+
+\vspace{0.7mm}
+
+
+\cventry{}{RX-INT: Kernel-Assisted Threat Detection}{}{}{}{
+Built a Windows kernel driver for real-time in-memory threat detection, targeting VAD manipulation, module stomping, and anomalous executable memory regions. Evaluated against 12 controlled scenarios and detected cases missed by PE-sieve. Published as an arXiv preprint.
+\href{https://arxiv.org/abs/2508.03879}{Paper}
+}
+
+\vspace{0.7mm}
+
+\cventry{}{LogiLinux}{}{}{}{
+1st place at LauzHack '25. Reverse-engineered Logitech HID++ protocols and built a Linux driver for the MX Creative Console, including a C++ backend, Tauri UI, and plugin SDK.
+\href{https://github.com/logilinux/}{Project}
+}
+
+\vspace{0.7mm}
+
+\cventry{}{Chimera: .NET Runtime Instrumentation}{}{}{}{
+Reverse-engineered CLR JIT internals to study managed runtime allocation and code heap behaviour. Built a runtime instrumentation proof-of-concept using internal JIT allocation paths and documented the technique in a technical writeup.
+\href{https://arjunjuneja.com/blog/2025/08/08/chimera}{Writeup}
+}
+
+\vspace{0.7mm}
+
+\cventry{}{Source2 Engine Analysis}{}{}{}{
+Analyzed Valve Source2 internals and built tooling for runtime interface enumeration, memory layout inspection, and SDK generation.
+\href{https://github.com/ImArjunJ/Source2}{Project}
+\href{https://arjunjuneja.com/blog/2024/03/08/source2-re}{Writeup}
+}
 
 \section{Competitions}
-\begin{itemize}[leftmargin=0.6cm, label=\textbullet]
-    \item \textbf{1st Place}: \href{https://www.linkedin.com/posts/arjunjuneja_hi-just-won-pwned-7-a-ctf-ran-by-the-amazing-share-7438996490213064704-VwRX}{\color{blue}pwnEd 7 CTF} (pwn/rev, 2026), \href{https://www.linkedin.com/posts/arjunjuneja_hi-again-i-just-won-one-of-europes-biggest-activity-7395862662816952321-cJR1}{\color{blue}Junction '25} (\texteuro10k), \href{https://www.linkedin.com/posts/arjunjuneja_hi-again-yes-its-the-2nd-win-in-a-week-activity-7398432080323375104-Kj4x}{\color{blue}LauzHack '25} (EPFL), \href{https://www.linkedin.com/posts/arjunjuneja_hi-i-just-won-another-hackathon-this-time-activity-7409417664034480128-mH5T}{\color{blue}DevHouse SF} (\$1k), \href{https://www.linkedin.com/posts/arjunjuneja_create-a-project-that-shapes-a-secure-tomorrow-activity-7307195841843216384-GkH9}{\color{blue}SotonHack '25}, JumpStart '24
-    \item \textbf{Top Placements}: \href{https://github.com/ron0studios/hyprlenia}{\color{blue}ICHack '26} (3rd + Best Technical), \href{https://www.linkedin.com/posts/arjunjuneja_robohack-2025-thank-you-to-southampton-activity-7304137543397048320-6XAb}{\color{blue}RoboHack '25} (2nd), \href{https://www.linkedin.com/posts/arjunjuneja_ichack2025-hackathon-imperialcollegelondon-activity-7292643769336619009-6Dil}{\color{blue}ICHack '25} (4th)
-    \item \textbf{Meta Hacker Cup}: Top 6.5\% (1465 / 22,494) \href{https://www.facebook.com/codingcompetitions/hacker-cup/2024/certificate/968836085258124}{\color{blue}Certificate}
+
+\begin{itemize}
+    \item \textbf{Wins}: 
+    \href{https://www.linkedin.com/posts/arjunjuneja_hi-just-won-pwned-7-a-ctf-ran-by-the-amazing-share-7438996490213064704-VwRX}{pwnEd 7 CTF}
+    (pwn/rev, 2026),
+    \href{https://www.linkedin.com/posts/arjunjuneja_hi-again-i-just-won-one-of-europes-biggest-activity-7395862662816952321-cJR1}{Junction '25}
+    (\texteuro10k),
+    \href{https://www.linkedin.com/posts/arjunjuneja_hi-again-yes-its-the-2nd-win-in-a-week-activity-7398432080323375104-Kj4x}{LauzHack '25}
+    (EPFL), DevHouse SF, SotonHack '25, JumpStart '24.
+
+    \item \textbf{Other placements}: ICHack '26 -- 3rd + Best Technical; RoboHack '25 -- 2nd; ICHack '25 -- 4th.
+
+    \item \textbf{Meta Hacker Cup}: Top 6.5\% globally, placing 1465 / 22,494.
+    \href{https://www.facebook.com/codingcompetitions/hacker-cup/2024/certificate/968836085258124}{Certificate}
 \end{itemize}
 
 \section{Education}
-\customcventry{Sep 2024 -- Jul 2027}{BSc Computer Science}{University of Southampton}{Southampton, UK}{}{Year 1: First Class}
-\customcventry{Sep 2022 -- Jul 2024}{A-Levels: Mathematics, Physics, Chemistry}{Feltham College}{London, UK}{}{A*AA}
+
+\customcventry{Sep 2024 -- Jul 2027}{BSc Computer Science}{University of Southampton}{Southampton, UK}{}{
+Year 1: First Class
+}
+
+\vspace{1.5mm}
+
+\customcventry{Sep 2022 -- Jul 2024}{A-Levels: Mathematics, Physics, Chemistry}{Feltham College}{London, UK}{}{
+A*AA
+}
 
 \section{Technical Skills}
-\cvitem{Core}{C++, Rust, C\#/.NET, Python, LLVM IR, x86/x64 Assembly}
-\cvitem{Systems}{Windows Kernel, Win32 API, Linux, FPGA, System Verilog, HID, CAN bus}
-\cvitem{Tools}{IDA Pro, Ghidra, x64dbg, Wireshark, GDB, CMake, Docker, Git, CI/CD}
-\cvitem{Graphics}{OpenGL, Dear ImGui, Compute Shaders}
 
+\cvitem{Languages}{C++, Rust, C\#/.NET, Python, x86/x64 Assembly, LLVM IR}
+\cvitem{Systems}{Windows Kernel, Win32 API, Linux drivers, HID, CAN bus}
+\cvitem{Security/RE}{IDA Pro, Ghidra, x64dbg, GDB, Wireshark, runtime analysis, binary instrumentation}
+\cvitem{Engineering}{CMake, Docker, Git, CI/CD, Dear ImGui, Tauri, libusb}
 
 \end{document}
